@@ -53,9 +53,6 @@ while running_starting_window: # ALL THESE PROCESSES TAKES PLACE WHEN THE WINDOW
 
 matched = image.load('extra/good_job.png') # GETS EXECUTED WHEN THE TILES MATCH EACHOTHER
 
-screen.fill((255,255,255))
-
-
 print ("Good Bye")
 
 ###############################################################################
