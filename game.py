@@ -53,6 +53,25 @@ while running_starting_window: # ALL THESE PROCESSES TAKES PLACE WHEN THE WINDOW
 
 matched = image.load('extra/good_job.png') # GETS EXECUTED WHEN THE TILES MATCH EACHOTHER
 
+tiles = [car(i) for i in range(0,gs.NUM_TILES_TOTAL)]
+
+screen.fill((255,255,255)) # IN-GAME BACKGROUND COLOUR BEFORE THE TILES FLIP AND THE CARS ARE VISIBLE
+
+for tile in tiles:
+    screen.blit(tile.image,(tile.row*gs.IMAGE_SIZE + gs.MARGIN,tile.col*gs.IMAGE_SIZE + gs.MARGIN))
+
+display.flip()
+
+pygame.time.wait(3500) # TIME TAKE BY THE TILE TO FLIP
+
+current_image_index = []
+
+flag_for_delay = False
+
+num_of_skips = 0
+
+running = True
+
 print ("Good Bye")
 
 ###############################################################################
