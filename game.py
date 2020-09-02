@@ -72,6 +72,8 @@ num_of_skips = 0
 
 running = True
 
+screen.fill((0,204,255)) # IN-GAME BACKGROUND COLOUR AFTER THE TILE IS FLIPPED AND THE CARS ARE NOW HIDDEN
+
 print ("Good Bye")
 
 ###############################################################################
