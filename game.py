@@ -74,6 +74,32 @@ running = True
 
 screen.fill((0,204,255)) # IN-GAME BACKGROUND COLOUR AFTER THE TILE IS FLIPPED AND THE CARS ARE NOW HIDDEN
 
+for i,tile in enumerate(tiles):
+        if tile.skip == False:
+            if i in current_image_index:
+                screen.blit(tile.image,(tile.row*gs.IMAGE_SIZE + gs.MARGIN,tile.col*gs.IMAGE_SIZE + gs.MARGIN))
+            else:
+                screen.blit(tile.box,(tile.row*gs.IMAGE_SIZE + gs.MARGIN,tile.col*gs.IMAGE_SIZE + gs.MARGIN))
+    
+    if (len(current_image_index) == 2):
+        if (tiles[current_image_index[0]].name == tiles[current_image_index[1]].name):
+            tiles[current_image_index[0]].skip = True
+            tiles[current_image_index[1]].skip = True
+            current_image_index = []
+            display.flip()
+            pygame.time.wait(555)
+            num_of_skips += 2
+            flag_for_delay = True
+            screen.blit(matched,(0,0))
+
+    display.flip()
+    if flag_for_delay == True:
+        pygame.time.wait(100)
+        flag_for_delay = False
+    
+    if num_of_skips == gs.NUM_TILES_TOTAL:
+        running = False
+
 print ("Good Bye")
 
 ###############################################################################
