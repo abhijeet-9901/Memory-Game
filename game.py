@@ -100,7 +100,7 @@ for i,tile in enumerate(tiles):  # ARRANGEMENT OF TILES WITH LOADED IMAGES IN IT
     if num_of_skips == gs.NUM_TILES_TOTAL:
         running = False
 
-print ("Good Bye")
+print ("Hope you had fun, Bye !")
 
 ###############################################################################
 
