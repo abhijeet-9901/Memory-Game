@@ -74,27 +74,27 @@ running = True
 
 screen.fill((0,204,255)) # IN-GAME BACKGROUND COLOUR AFTER THE TILE IS FLIPPED AND THE CARS ARE NOW HIDDEN
 
-for i,tile in enumerate(tiles):
+for i,tile in enumerate(tiles):  # ARRANGEMENT OF TILES WITH LOADED IMAGES IN IT
         if tile.skip == False:
             if i in current_image_index:
                 screen.blit(tile.image,(tile.row*gs.IMAGE_SIZE + gs.MARGIN,tile.col*gs.IMAGE_SIZE + gs.MARGIN))
             else:
                 screen.blit(tile.box,(tile.row*gs.IMAGE_SIZE + gs.MARGIN,tile.col*gs.IMAGE_SIZE + gs.MARGIN))
     
-    if (len(current_image_index) == 2):
+    if (len(current_image_index) == 2): # OCCURS WHEN 2 TILES ARE FLIPPED
         if (tiles[current_image_index[0]].name == tiles[current_image_index[1]].name):
             tiles[current_image_index[0]].skip = True
             tiles[current_image_index[1]].skip = True
             current_image_index = []
             display.flip()
-            pygame.time.wait(555)
+            pygame.time.wait(555) # THE TIME TAKEN FOR THE TILE TO FLIP BACK WHEN IT IS VISIBLE
             num_of_skips += 2
             flag_for_delay = True
             screen.blit(matched,(0,0))
 
     display.flip()
     if flag_for_delay == True:
-        pygame.time.wait(100)
+        pygame.time.wait(2000) # TIME TAKEN BY THE GOOD JOB.JPG IS VISIBLE ON THE SCREEN
         flag_for_delay = False
     
     if num_of_skips == gs.NUM_TILES_TOTAL:
