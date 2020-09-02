@@ -94,7 +94,7 @@ for i,tile in enumerate(tiles):  # ARRANGEMENT OF TILES WITH LOADED IMAGES IN IT
 
     display.flip()
     if flag_for_delay == True:
-        pygame.time.wait(2000) # TIME TAKEN BY THE GOOD JOB.JPG IS VISIBLE ON THE SCREEN
+        pygame.time.wait(1000) # TIME TAKEN BY THE GOOD JOB.JPG IS VISIBLE ON THE SCREEN
         flag_for_delay = False
     
     if num_of_skips == gs.NUM_TILES_TOTAL:
